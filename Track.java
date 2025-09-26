@@ -13,6 +13,10 @@ public class Track
     private String title;
     // Where the track is stored.
     private String filename;
+    // How many times the track has been played.
+    private int playCount;
+    // Is the track a favorite?
+    private boolean favorite;
     
     /**
      * Constructor for objects of class Track.
@@ -23,6 +27,8 @@ public class Track
     public Track(String artist, String title, String filename)
     {
         setDetails(artist, title, filename);
+        playCount = 0;
+        favorite = false;
     }
     
     /**
@@ -34,6 +40,8 @@ public class Track
     public Track(String filename)
     {
         setDetails("unknown", "unknown", filename);
+        playCount = 0;
+        favorite = false;
     }
     
     /**
@@ -85,4 +93,62 @@ public class Track
         this.filename = filename;
     }
     
+    /**
+     * Reset the play count of the track.
+     * Answer to Question 29
+     */
+    public int resetPlayCount()
+    {
+        playCount = 0;
+        return playCount;
+    }
+    
+    /**
+     * Increase the play count of the track by 1.
+     * Answer to Question 29
+     */
+    public int increasePlayCount()
+    {
+        playCount++;
+        return playCount;
+    }
+    
+    /**
+     * See if a track is a favorite.
+     * Answer to Question 31
+     */
+    public boolean isFavorite(String filename)
+    {
+        return favorite;
+    }
+    
+    /**
+     * Make a track a favorite.
+     * Answer to Question 31
+     */
+    public void setFavorite(int index)
+    {
+        if(favorite == false) {
+            favorite = true;
+            System.out.println("Set " + filename + " as a favorite!");
+        }
+        else {
+            System.out.println(filename + " is already a favorite!");
+        }
+    }
+    
+    /**
+     * Remove a track from favorites.
+     * Answer to Question 31
+     */
+    public void unfavorite(int index)
+    {
+        if(favorite == true) {
+            favorite = false;
+            System.out.println(filename + " is no longer a favorite!");
+        }
+        else {
+            System.out.println(filename + " is already not a favorite!");
+        }
+    }
 }

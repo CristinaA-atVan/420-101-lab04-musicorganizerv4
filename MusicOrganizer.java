@@ -23,7 +23,7 @@ public class MusicOrganizer
     {
         player = new MusicPlayer();
         reader = new TrackReader();
-        trackList = reader.readTracks("../audio", ".mp3");
+        trackList = reader.readTracks("./audio", ".mp3");
         if(! trackList.isEmpty()) {
             System.out.println("Music library loaded. " + getNumberOfTracks() + " tracks.");
         }
@@ -118,6 +118,7 @@ public class MusicOrganizer
             Track track = trackList.get(index);
             player.startPlaying(track.getFilename());
             System.out.println("Now playing: " + track.getArtist() + " - " + track.getTitle());
+            track.increasePlayCount();
         }
     }
 
@@ -153,5 +154,33 @@ public class MusicOrganizer
             valid = true;
         }
         return valid;
+    }
+    
+    /**
+     * Set a track as a favorite.
+     * Answer to Question 31
+     */
+    public void setFavorite(int index)
+    {
+        if(validIndex(index)) {
+            Track track = trackList.get(index);
+            track.setFavorite(index);
+        }
+    }
+    
+    /**
+     * Remove a track from favorites.
+     * Answer to Question 31
+     */
+    /**
+     * Set a track as a favorite
+     * Answer to Question 31
+     */
+    public void unfavorite(int index)
+    {
+        if(validIndex(index)) {
+            Track track = trackList.get(index);
+            track.unfavorite(index);
+        }
     }
 }
