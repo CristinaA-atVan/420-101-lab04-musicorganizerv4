@@ -110,11 +110,13 @@ public class MusicOrganizer
     
     /**
      * Play a track in the collection.
+     * Changed to answer Question 32
      * @param index The index of the track to be played.
      */
     public void playTrack(int index)
     {
         if(validIndex(index)) {
+            player.stop();
             Track track = trackList.get(index);
             player.startPlaying(track.getFilename());
             System.out.println("Now playing: " + track.getArtist() + " - " + track.getTitle());

@@ -20,3 +20,18 @@ play them. Just make sure the filename is of the expected format:
 
   artist name-track name.mp3
 
+
+33. boolean found = false;
+    while(! found) {
+    if(the keys are in the next place) {
+    found = true;
+    }
+}
+34. public void multiplesOfFive()
+    {
+        int value = 5;
+        while(value <= 90) {
+            value = value+5;
+            System.out.println(value);
+        }
+    }
