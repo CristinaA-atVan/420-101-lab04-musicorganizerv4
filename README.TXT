@@ -23,15 +23,49 @@ play them. Just make sure the filename is of the expected format:
 
 33. boolean found = false;
     while(! found) {
-    if(the keys are in the next place) {
-    found = true;
+        if(the keys are in the next place) {
+            found = true;
+        }
     }
-}
 34. public void multiplesOfFive()
     {
         int value = 5;
-        while(value <= 90) {
+        while(value < 95) {
             value = value+5;
             System.out.println(value);
         }
     }
+35. public void sum()
+    {
+        int currentValue = 1;
+        int totalValue = 0;
+        while(currentValue <= 10) {
+            totalValue = (currentValue + totalValue);
+            currentValue++;
+        }
+        System.out.println(totalValue);
+    }
+36. public void sum(int a, int b)
+    {
+        int currentValue = a;
+        int totalValue = 0;
+        while(currentValue <= b) {
+            totalValue = (currentValue + totalValue);
+            currentValue++;
+        }
+        System.out.println(totalValue);
+    }
+37. public boolean isPrime(int n)
+    {
+        boolean isPrime = true;
+        int divisor = 2;
+        while(divisor <= (n - 1)) {
+            int remainder = (n % divisor);
+            if(remainder == 0) {
+                isPrime = false;
+            }
+            divisor++;
+        }
+        return isPrime;
+    }
+38. There's no findFirst method in any of the classes, but I'll assume yes due to how array lists work

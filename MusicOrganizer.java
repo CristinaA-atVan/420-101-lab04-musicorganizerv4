@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import java.util.Iterator;
 
 /**
  * A class to hold details of audio tracks.
@@ -174,15 +175,28 @@ public class MusicOrganizer
      * Remove a track from favorites.
      * Answer to Question 31
      */
-    /**
-     * Set a track as a favorite
-     * Answer to Question 31
-     */
     public void unfavorite(int index)
     {
         if(validIndex(index)) {
             Track track = trackList.get(index);
             track.unfavorite(index);
+        }
+    }
+    
+    /**
+     * Remove all tracks with a certain string in its title.
+     * Answer to question 39
+     * @param titleToRemove The track title
+     */
+    public void removeByTitle(String titleToRemove)
+    {
+        Iterator<Track> it = trackList.iterator();
+        while(it.hasNext()) {
+            Track t = it.next();
+            String title = t.getTitle();
+            if(title.contains(titleToRemove)) {
+                it.remove();
+            }
         }
     }
 }
